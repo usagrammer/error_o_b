@@ -1,0 +1,50 @@
+<div class="content__title">
+  プロフィール編集
+</div>
+
+<div class="profile-errors">
+  <% if @error%>
+    <h3 class="profile-errors-title"><%= @error%></h3>
+  <% end%>
+</div>
+
+<div class="profile-form">
+
+  <%= form_with model: @profile, class: :form, local: true do |form| %>
+    <%= form.label :name, "年齢" %>
+    <%= form.number_field :age, placeholder: :年齢, class: "narrow-form" %>
+
+    <%= form.label :name, "性別" %>
+    <%= form.text_field :gender, placeholder: :性別, class: "narrow-form" %>
+
+    <%= form.label :last_name, "名字" %>
+    <%= form.text_field :last_name, placeholder: :名字, class: "narrow-form" %>
+
+    <%= form.label :first_name, "名前" %>
+    <%= form.text_field :first_name, placeholder: :名前, class: "narrow-form" %>
+
+    <%= form.label :height, "身長（cm）" %>
+    <%= form.text_field :height, placeholder: :身長, class: "narrow-form" %>
+
+    <%= form.label :weight, "体重（kg）" %>
+    <%= form.text_field :weight, placeholder: :体重, class: "narrow-form" %>
+
+    <%= form.label :foot_size, "靴のサイズ（cm）" %>
+    <%= form.text_field :foot_size, placeholder: :靴のサイズ, class: "narrow-form" %>
+
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address, placeholder: :住所, class: "wide-form" %>
+
+    <%= form.label :skill, "特技" %>
+    <%= form.text_field :skill, placeholder: :特技, class: "wide-form" %>
+
+    <%= form.label :favorite_food, "好きな食べ物" %>
+    <%= form.text_field :favorite_food, placeholder: :好きな食べ物, class: "narrow-form" %>
+
+    <%= form.label :introduction, "自己紹介" %>
+    <%= form.text_area :introduction, placeholder: :自己紹介, class: :form__text %>
+
+    <%= form.submit '登録する', class: :form__btn %>
+  <% end %>
+
+</div>

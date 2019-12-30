@@ -1,0 +1,95 @@
+<div class="users-wrapper">
+  <div class="users-content">
+    <div class="postTitle">
+      <%= @user.nickname %>さんの投稿一覧
+    </div>
+    <% @user.posts.each do |post| %>
+      <%= render partial: "posts/post", locals: { post: post } %>
+    <% end %>
+  </div>
+
+  <div class="profile-content">
+    <h3 class="profile-header">
+      <%= current_user.nickname%>さんのプロフィール
+    </h3>
+    <% if current_user.profile%>
+      <div class="profile">
+        <span class="profile-left">
+          年齢：
+        </span>
+        <%= current_user.profile.age%>歳
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          性別：
+        </span>
+        <%= current_user.profile.gender%>
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          名前：
+        </span>
+        <%= current_user.profile.last_name%><%= current_user.profile.first_name%>
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          身長：
+        </span>
+        <%= current_user.profile.height%>cm
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          体重：
+        </span>
+        <%= current_user.profile.weight%>kg
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          靴のサイズ：
+        </span>
+        <%= current_user.profile.foot_size%>cm
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          住所：
+        </span>
+        <%= current_user.profile.address%>
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          特技：
+        </span>
+        <%= current_user.profile.skill%>
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          好きな食べ物：
+        </span>
+        <%= current_user.profile.favorite_food%>
+      </div>
+
+      <div class="profile">
+        <span class="profile-left">
+          自己紹介：
+        </span>
+      <%= current_user.profile.introduction%>
+
+      <br>
+      <%= link_to "プロフィールを編集する", edit_profile_path(current_user.profile), class: "profile-btn" %>
+      <br>
+      <%= link_to "プロフィールを削除する", profile_path, method: :delete, class: "profile-btn" %>
+      </div>
+
+    <% else %>
+      <%= link_to "プロフィールを登録する", new_profile_path, class: "profile-btn" %>
+    <% end %>
+  </div>
+</div>

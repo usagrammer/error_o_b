@@ -1,0 +1,52 @@
+<div class="content__title">
+  プロフィール編集
+</div>
+
+<div class="profile-errors">
+  <% if @error%>
+    <h3 class="profile-errors-title"><%= @error%></h3>
+  <% end%>
+</div>
+
+<div class="profile-form">
+
+  <%= form_with model: @profile, class: :form, local: true do |form| %>
+
+    <%= form.submit '登録する', class: :form__btn %>
+
+    <%= form.label :name, "年齢" %>
+    <%= form.number_field :age, placeholder: :年齢, value: "20", class: "narrow-form" %>
+
+    <%= form.label :gender, "性別" %>
+    <%= form.text_field :gander, placeholder: :性別, value: "男性", class: "narrow-form" %>
+
+    <%= form.label :last_name, "名字" %>
+    <%= form.text_field :last_name, placeholder: :名字,  value: "山田", class: "narrow-form" %>
+
+    <%= form.label :first_name, "名前" %>
+    <%= form.text_field :first_name, placeholder: :名前, value: "太郎", class: "narrow-form" %>
+
+    <%= form.label :height, "身長（cm）" %>
+    <%= form.text_field :height, placeholder: :身長, value:"170", class: "narrow-form" %>
+
+    <%= form.label :weight, "体重（kg）" %>
+    <%= form.text_field :weight, placeholder: :体重, value: "65", class: "narrow-form" %>
+
+    <%= form.label :foot_size, "靴のサイズ（cm）" %>
+    <%= form.text_field :foot_size, placeholder: :靴のサイズ, value: "27", class: "narrow-form" %>
+
+    <%= form.label :address, "住所" %>
+    <%= form.text_field :address, placeholder: :住所, value: "大阪府テック市エキスパート町", class: "wide-form" %>
+
+    <%= form.label :skill, "特技" %>
+    <%= form.text_field :skill, placeholder: :特技, value: "プログラミング", class: "wide-form" %>
+
+    <%= form.label :favorite_food, "好きな食べ物" %>
+    <%= form.text_field :favorite_food, placeholder: :好きな食べ物, value: "カレーライス", class: "narrow-form" %>
+
+    <%= form.label :introduction, "自己紹介" %>
+    <%= form.text_area :introduction, placeholder: :自己紹介, value: "エンジニアになりたい！", class: :form__text %>
+
+  <% end %>
+
+</div>

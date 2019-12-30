@@ -1,0 +1,2 @@
+"id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","nickname"
+1,"hogehoge@hoge.com","$2a$11$.73GaDfwRAjWoBrMLh7.yuVFVtXmo9qdM2bMSpjMcJ.DHjdop.y7m",,,,"2019-12-18 01:13:38","2019-12-18 01:13:38","hogehoge"
